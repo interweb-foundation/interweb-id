@@ -1,0 +1,61 @@
+{
+  "name": "cosmology",
+  "version": "0.0.1",
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "private": true,
+  "scripts": {
+    "postinstall": "yarn-deduplicate || exit 0",
+    "build": "lerna run prepare --parallel",
+    "bootstrap": "lerna bootstrap --use-workspaces",
+    "bootstrap:local": "lerna bootstrap --force-local && lerna link --force-local",
+    "lint": "npm run lint:js && npm run lint:style",
+    "lint:debug": "DEBUG=eslint:*,eslintrc:* eslint --ignore-path .gitignore 'packages/**/*.js'",
+    "lint:js": "eslint --ignore-path .gitignore 'packages/**/*.js'",
+    "lint:fix": "eslint --ignore-path .gitignore 'packages/**/*.js' --fix",
+    "lint:style": "stylelint 'packages/**/*.js'",
+    "test:watch": "jest --watch",
+    "test": "jest",
+    "storybook:ui": "lerna run --stream --scope @cosmology/react storybook"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.17.6",
+    "@babel/core": "7.17.5",
+    "@babel/eslint-parser": "^7.5.4",
+    "@pyramation/babel-preset-env": "0.1.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^24.9.0",
+    "eslint": "8.10.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-config-react-app": "5.2.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "4.1.2",
+    "stylelint": "13.7.2",
+    "stylelint-config-recommended": "3.0.0",
+    "stylelint-config-styled-components": "0.1.1",
+    "stylelint-processor-styled-components": "1.10.0",
+    "yarn-deduplicate": "3.0.0",
+    "@types/jest": "^27.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
+    "cross-env": "^7.0.3",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-unicorn": "^40.0.0",
+    "jest": "^27.4.5",
+    "lerna": "^4.0.0",
+    "lint-staged": "^12.1.3",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.5.1",
+    "ts-jest": "^27.1.2",
+    "typescript": "4.5.4"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cosmology-tech/web"
+  }
+}
