@@ -63,7 +63,7 @@ const Hero = () => {
           letterSpacing={{ lg: "tight" }}
           color={useColorModeValue("purple.400", "purple.200")}
         >
-          Take full control of your cryptographic operations and web3 identity
+          Take full control of your cryptographic operations and web3 identity with Interweb ID
         </Text>
         <Box pt={{ base: 3, md: 4, lg: 10 }}>
           <NextLink href="/mnemonic" passHref={true}>
@@ -88,7 +88,7 @@ const Hero = () => {
                   duration: 5,
                 }}
               >
-                Create your wallet
+                Create your Interweb ID
               </AnimateButton>
             </ChakraLink>
           </NextLink>
